@@ -12,7 +12,7 @@ LABEL io.k8s.description="A basic Apache HTTP Server child image, uses ONBUILD" 
 
 # Change web server port to 8080
 RUN sed -i "s/Listen 80/Listen 8080/g" /etc/httpd/conf/httpd.conf && \
-    yum install -y iputils-ping && \
+    yum install -y iputils-ping -y && \
     yum clean all --disableplugin=subscription-manager -y
 
 # Permissions to allow container to run on OpenShift
